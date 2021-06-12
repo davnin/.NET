@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "CreatePerson";
+    Layout = "_Layout";
+}
+
+<h1>CreatePerson your favourite persons</h1>
+<form asp-controller="Home" asp-action="DisplayPerson" method="post">
+    <table>
+        <tr>
+            <td>
+                First Name:
+                <input type="text" name="fName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+                <input type="text" name="lName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Age:
+                <input type="number" name="age" />
+            </td> 
+        </tr>
+        <tr>
+            <td>
+                Email Address:
+                <input type="email" name="email" />
+            </td>  
+        </tr>
+        <tr>
+            <td>
+                Date of Birth:
+                <input type="datetime" name="dob" />
+            </td>       
+        </tr>
+        <tr>
+            <td>
+                Password:
+                <input type="password" name="password" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Description :
+                <input type="text" name="description" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</form>
+

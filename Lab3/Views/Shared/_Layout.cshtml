@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lab3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/StyleSheet.css"  rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the web application I built in Lab 3</h1>
+        <br />
+        <br />
+        <a href="/">Home</a>
+        <a href="/Home/Razor">Show the song!</a>
+        <a href="/Home/CreatePerson">Persons</a>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <table>
+            <ul>
+                <li>
+                    In order o create the css file you right click on the folder you want
+                    the file to go in, choose "Add", then "new Item" and you choose stylesheet.
+                </li>
+                <li>
+                    A layout guarantees a uniformity through out the website and creates a template
+                </li>
+                <li>
+                    Each file goes in the foolder that represents the role it plays in the MVC architecture.
+                </li>
+            </ul>
+        </table>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
