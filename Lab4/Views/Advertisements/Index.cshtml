@@ -1,0 +1,48 @@
+﻿@model Lab4.Models.ViewModels.CommunityViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<p>
+    <a asp-action="Create">Upload New</a><br />
+    <a asp-controller="Communities" asp-action="Index">Back To List</a>
+</p>
+
+<h1>Show ads for this community</h1>
+
+@if (Model.CommunityAdvertisements.Count() > 0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Advertisements.First().FileName)
+            </th>
+            <th>
+                Image
+            </th>
+            
+        </tr>
+        @foreach (var item in Model.CommunityAdvertisements.Select(i => i.Advertisements))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    <img src="@item.Url" style="max-width: 400px;" />
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.AdId">Delete</a>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+
+}
+else {
+    <p>There's o file to show !</p>
+}
